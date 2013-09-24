@@ -1,13 +1,12 @@
-# vim:ft=zsh ts=2 sw=2 sts=2
-#
-#
 function svn_prompt() {
   if svn_is_inside; then
-    local ref dirty
+    local ref repo_status
     if svn_parse_dirty; then
-      dirty=$ZSH_THEME_SVN_PROMPT_DIRTY
+      repo_status=$ZSH_THEME_SVN_PROMPT_DIRTY
+    else
+      repo_status=$ZSH_THEME_SVN_PROMPT_CLEAN
     fi
-    echo -n " $(svn_branch_name) $(svn_rev)$dirty"
+    echo -n $ZSH_THEME_SVN_PROMPT$repo_status
   fi
 }
 
