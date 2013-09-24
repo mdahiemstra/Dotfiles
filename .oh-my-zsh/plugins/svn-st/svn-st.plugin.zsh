@@ -2,9 +2,9 @@ function svn_prompt() {
   if svn_is_inside; then
     local ref repo_status
     if svn_parse_dirty; then
-      repo_status=$ZSH_THEME_SVN_PROMPT_DIRTY
+      repo_status=$ZSH_THEME_SVN_PROMPT_DIRTY$(svn_rev)
     else
-      repo_status=$ZSH_THEME_SVN_PROMPT_CLEAN
+      repo_status=$ZSH_THEME_SVN_PROMPT_CLEAN$(svn_rev)
     fi
     echo -n $ZSH_THEME_SVN_PROMPT$repo_status
   fi
