@@ -1,0 +1,6 @@
+[ui]
+username = Michel Hiemstra <mhiemstra@php.net>
+editor = vim
+
+[alias]
+killitwithfire = revert --no-backup --all
